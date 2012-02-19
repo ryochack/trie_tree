@@ -20,7 +20,7 @@ typedef struct tag_trie {
 static TRIE *st;
 
 
-trie* trie_make(void) {
+static trie* trie_make(void) {
 	trie *p = (trie*)malloc(sizeof(trie));
 	if (p == NULL) return p;
 
@@ -96,7 +96,7 @@ TRIE Trie_Put(TRIE vp, const char *key, void *value) {
 }
 
 
-void* trie_get(trie *p, const char *key) {
+static void* trie_get(trie *p, const char *key) {
 	int i;
 
 	if (*key == 0) {
